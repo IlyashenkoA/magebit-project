@@ -1,0 +1,113 @@
+@use "../abstracts/mixins" as *;
+
+.subscribe {
+  display: flex;
+  flex-direction: column;
+  gap: 11rem;
+
+  min-height: 100vh;
+
+  @include large-desktop {
+    gap: 10rem;
+    padding: 6.25rem 4rem;
+    min-height: initial;
+    background: linear-gradient(180deg, rgba(var(--white-clr)) 0%, rgba(var(--almost-white-clr)) 100%);
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    min-width: 18.5rem;
+    max-width: 30rem;
+    width: calc(100% - 10rem);
+    padding: 1.875rem 1.25rem;
+    margin-bottom: 10rem;
+
+    background: linear-gradient(180deg, rgba(var(--white-clr)) 0%, rgba(var(--almost-white-clr)) 100%);
+
+    @include large-desktop {
+      position: initial;
+      transform: initial;
+      padding: 0;
+      background: initial;
+
+      display: grid;
+      place-content: center;
+      flex: 1 1 auto;
+
+      width: 100%;
+      margin: 0;
+      max-width: initial;
+    }
+
+    &-title {
+      font-family: var(--secondary-ff);
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 2.125rem;
+      margin: 0;
+      padding-bottom: 0.625rem;
+      color: rgba(var(--black-clr), 1);
+
+      @include large-desktop {
+        font-size: 2rem;
+        padding: 0 0 1rem 2.25rem;
+      }
+    }
+
+    &-subtitle {
+      font-family: var(--primary-ff);
+      font-size: 0.875rem;
+      line-height: 1.75rem;
+      font-weight: 400;
+      margin: 0;
+      padding-bottom: 1.25rem;
+      color: rgba(var(--grey-clr));
+      width: 80%;
+
+      @include large-desktop {
+        font-size: 1rem;
+        padding: 0 0 3.125rem 2.25rem;
+        width: 70%;
+      }
+    }
+
+    &-social-links {
+      display: grid;
+      place-items: center;
+
+      padding-top: 1.25rem;
+
+      @include large-desktop {
+        padding-top: 3.125rem;
+      }
+
+      & > span {
+        display: block;
+        height: 0.0625rem;
+        width: 100%;
+        background: rgba(var(--light-grey-clr));
+
+        @include large-desktop {
+          width: 85%;
+        }
+      }
+
+      .social__links-list {
+        display: inline-flex;
+        justify-content: space-between;
+        gap: 0.625rem;
+        list-style: none;
+        margin: 0;
+        padding: 1.25rem 0 0 0;
+
+        @include large-desktop {
+          padding-top: 3.125rem;
+          gap: 1.25rem;
+        }
+      }
+    }
+  }
+}

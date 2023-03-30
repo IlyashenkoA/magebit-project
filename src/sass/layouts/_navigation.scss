@@ -1,0 +1,36 @@
+@use "../abstracts/mixins" as *;
+
+.nav {
+  padding-top: 0.625rem;
+
+  @include large-desktop {
+    padding-top: 1rem;
+  }
+
+  &__list {
+    display: inline-flex;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+
+    @include large-desktop {
+      gap: 2rem;
+      font-size: 1rem;
+    }
+
+    &-item {
+      list-style: none;
+
+      & > a {
+        text-decoration: none;
+        color: rgba(var(--grey-clr));
+        font-size: 0.875rem;
+        font-family: var(--primary-ff);
+
+        @include large-desktop {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

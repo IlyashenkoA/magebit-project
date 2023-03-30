@@ -1,0 +1,23 @@
+@mixin tablet {
+  @media (min-width: 43rem) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 62rem) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media (min-width: 82rem) {
+    @content;
+  }
+}
+
+@mixin custom-breakpoint($min-width) {
+  @media (min-width: $min-width) {
+    @content;
+  }
+}

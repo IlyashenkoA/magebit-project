@@ -1,0 +1,153 @@
+@use "../abstracts/mixins" as *;
+
+.input {
+  &__group {
+    display: inline-flex;
+    align-items: center;
+
+    width: 97.5%;
+
+    @include large-desktop {
+      width: 130%;
+    }
+
+    &:hover {
+      .input__control {
+        border-color: rgba(var(--blue-clr));
+
+        &::placeholder {
+          color: rgba(var(--black-clr), 1);
+        }
+      }
+
+      path {
+        fill: rgba(var(--blue-clr));
+        opacity: 1;
+      }
+    }
+  }
+
+  &__control {
+    border: 0.0625rem solid rgba(var(--light-grey-clr));
+    padding: 1.4375rem 3rem 1.4375rem 1rem;
+    width: 100%;
+    border-left: 0.25rem solid rgba(var(--blue-clr));
+
+    font-family: var(--primary-ff);
+    font-size: 1rem;
+    color: rgba(var(--grey-clr));
+
+    transition: 0.3s;
+
+    &:invalid {
+      border-color: #b80808;
+      color: rgba(var(--black-clr), 1);
+    }
+
+    &:hover {
+      color: rgba(var(--black-clr), 1);
+    }
+
+    &:focus {
+      color: rgba(var(--grey-clr));
+
+      & + button svg path {
+        fill: rgba(var(--black-clr), 1);
+        opacity: 0.3;
+      }
+    }
+
+    &:is(:focus, :hover, :invalid) {
+      outline: none;
+      box-shadow: 0px 1.875rem 2.5rem rgba(var(--black-clr), 0.06);
+    }
+
+    &::placeholder {
+      font-family: var(--primary-ff);
+      font-size: 1rem;
+      color: rgba(var(--grey-clr));
+    }
+
+    @include large-desktop {
+      padding: 1.4375rem 4.5rem 1.4375rem 2rem;
+    }
+  }
+
+  &__submit {
+    border: none;
+    background-color: transparent;
+    height: 0.875rem;
+    margin-left: -2.75rem;
+
+    @include large-desktop {
+      margin-left: -4rem;
+    }
+
+    cursor: pointer;
+
+    path {
+      transition: 0.3s;
+    }
+  }
+}
+
+.checkbox {
+  &__container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 1.8rem;
+
+    padding-left: 2.75rem;
+    color: rgba(var(--grey-clr));
+    cursor: pointer;
+
+    & > p {
+      margin: 0;
+      color: rgba(var(--grey-clr));
+      font-size: 1rem;
+      font-family: var(--primary-ff);
+    }
+  }
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    cursor: pointer;
+
+    &:checked ~ .checkbox__checkmark {
+      background-color: rgba(var(--blue-clr));
+      border-color: rgba(var(--blue-clr));
+    }
+
+    &:checked ~ .checkbox__checkmark::after {
+      opacity: 1;
+    }
+  }
+
+  &__checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.625rem;
+    width: 1.625rem;
+    background-color: rgba(var(--white-clr));
+    border: 0.0625rem solid rgba(var(--almost-white-clr));
+    border-radius: 0.1875rem;
+    transition: 0.3s;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0.4rem;
+      top: 0.45rem;
+      height: 0.6875rem;
+      width: 0.875rem;
+
+      background-image: url("../../assets/icons/ic_checkmark.svg");
+    }
+  }
+}

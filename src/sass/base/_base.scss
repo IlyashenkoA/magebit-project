@@ -1,0 +1,20 @@
+@use "../abstracts/mixins" as *;
+
+html,
+body {
+  min-height: 100vh;
+  min-width: 375px;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  background: url("../../assets/images/image_summer.png") no-repeat center center / cover;
+
+  @include large-desktop {
+    display: grid;
+    grid-template-columns: 35% 1fr;
+
+    background: none;
+  }
+}

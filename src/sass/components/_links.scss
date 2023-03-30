@@ -1,0 +1,12 @@
+.link {
+  color: rgba(var(--black-clr), 1);
+  text-underline-offset: 0.2rem;
+
+  &:hover {
+    color: rgba(var(--blue-clr));
+  }
+
+  &:focus {
+    color: rgba(var(--dark-blue-clr));
+  }
+}
