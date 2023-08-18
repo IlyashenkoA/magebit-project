@@ -5,6 +5,8 @@ import { ReactComponent as InstagramIcon } from './assets/icons/ic_instagram.svg
 import { ReactComponent as TwitterIcon } from './assets/icons/ic_twitter.svg';
 import { ReactComponent as YoutubeIcon } from './assets/icons/ic_youtube.svg';
 import { ReactComponent as SuccessIcon } from './assets/icons/ic_success.svg';
+import mobileLogo from './assets/logo/mobile-logo.svg';
+import desktopLogo from './assets/logo/desktop-logo.svg';
 
 const formMessages = {
   invalidEmail: 'Please provide a valid e-mail address',
@@ -97,7 +99,10 @@ function App() {
     <>
       <div className='subscribe'>
         <header className='header'>
-          <i className='header__logo'></i>
+          <picture className='header__logo'>
+          <source media='(min-width:43rem)' srcSet={desktopLogo} />
+            <img src={mobileLogo} alt='Pineapple logo' />
+          </picture>
           <nav className='nav'>
             <ul className='nav__list'>
               <li className='nav__list-item'>
