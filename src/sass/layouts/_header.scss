@@ -15,9 +15,5 @@
 
   &__logo {
     height: 2.5rem;
-
-    @include tablet {
-      width: 7.375rem;
-    }
   }
 }

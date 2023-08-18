@@ -100,7 +100,7 @@ function App() {
       <div className='subscribe'>
         <header className='header'>
           <picture className='header__logo'>
-          <source media='(min-width:43rem)' srcSet={desktopLogo} />
+            <source media='(min-width:43rem)' srcSet={desktopLogo} />
             <img src={mobileLogo} alt='Pineapple logo' />
           </picture>
           <nav className='nav'>
