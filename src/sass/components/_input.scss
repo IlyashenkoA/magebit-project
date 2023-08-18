@@ -1,15 +1,11 @@
-@use "../abstracts/mixins" as *;
+@use '../abstracts/mixins' as *;
 
 .input {
   &__group {
-    display: inline-flex;
+    position: relative;
+    display: flex;
     align-items: center;
-
-    width: 97.5%;
-
-    @include large-desktop {
-      width: 130%;
-    }
+    width: 100%;
 
     &:hover {
       .input__control {
@@ -28,18 +24,20 @@
   }
 
   &__control {
+    @include text-styles(
+      var(--primary-ff),
+      1rem,
+      1.5rem,
+      400,
+      rgba(var(--grey-clr))
+    );
     border: 0.0625rem solid rgba(var(--light-grey-clr));
     padding: 1.4375rem 3rem 1.4375rem 1rem;
-    width: 100%;
     border-left: 0.25rem solid rgba(var(--blue-clr));
-
-    font-family: var(--primary-ff);
-    font-size: 1rem;
-    color: rgba(var(--grey-clr));
-
+    width: 100%;
     transition: 0.3s;
 
-    &:invalid {
+    &.invalid {
       border-color: #b80808;
       color: rgba(var(--black-clr), 1);
     }
@@ -62,28 +60,23 @@
       box-shadow: 0px 1.875rem 2.5rem rgba(var(--black-clr), 0.06);
     }
 
-    &::placeholder {
-      font-family: var(--primary-ff);
-      font-size: 1rem;
-      color: rgba(var(--grey-clr));
-    }
-
-    @include large-desktop {
-      padding: 1.4375rem 4.5rem 1.4375rem 2rem;
+    @include tablet {
+      padding: 1.4375rem 8rem 1.4375rem 2.5rem;
     }
   }
 
   &__submit {
+    position: absolute;
+    right: 1rem;
+    padding: 0;
     border: none;
     background-color: transparent;
     height: 0.875rem;
-    margin-left: -2.75rem;
-
-    @include large-desktop {
-      margin-left: -4rem;
-    }
-
     cursor: pointer;
+
+    @include tablet {
+      right: 1.5rem;
+    }
 
     path {
       transition: 0.3s;
@@ -94,19 +87,26 @@
 .checkbox {
   &__container {
     position: relative;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     height: 1.8rem;
 
     padding-left: 2.75rem;
     color: rgba(var(--grey-clr));
-    cursor: pointer;
 
     & > p {
       margin: 0;
-      color: rgba(var(--grey-clr));
-      font-size: 1rem;
-      font-family: var(--primary-ff);
+      @include text-styles(
+        var(--primary-ff),
+        1rem,
+        1.625rem,
+        400,
+        rgba(var(--grey-clr))
+      );
+    }
+
+    .link {
+      color: rgba(var(--black-clr), 1);
     }
   }
 
@@ -117,13 +117,17 @@
     width: 0;
     cursor: pointer;
 
-    &:checked ~ .checkbox__checkmark {
+    &:active ~ .checkbox__checkmark {
       background-color: rgba(var(--blue-clr));
       border-color: rgba(var(--blue-clr));
     }
 
-    &:checked ~ .checkbox__checkmark::after {
-      opacity: 1;
+    &:checked ~ .checkbox__checkmark {
+      background-color: rgba(var(--dark-blue-clr));
+
+      &::after {
+        opacity: 1;
+      }
     }
   }
 
@@ -138,8 +142,10 @@
     border-radius: 0.1875rem;
     transition: 0.3s;
 
+    cursor: pointer;
+
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       display: block;
       left: 0.4rem;
@@ -147,7 +153,7 @@
       height: 0.6875rem;
       width: 0.875rem;
 
-      background-image: url("../../assets/icons/ic_checkmark.svg");
+      background-image: url('../../assets/icons/ic_checkmark.svg');
     }
   }
 }

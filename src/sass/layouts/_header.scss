@@ -1,24 +1,25 @@
-@use "../abstracts/mixins" as *;
+@use '../abstracts/mixins' as *;
 
 .header {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: space-between;
 
   padding: 0.625rem 1.25rem 1rem;
   background-color: rgba(var(--white-clr));
 
-  @include large-desktop {
-    padding: 0;
+  @include tablet {
+    background-color: transparent;
+    padding: 0.625rem 0 1rem;
   }
 
   &__logo {
     height: 2.5rem;
     width: 1.5625rem;
-    background-image: url("../../assets/logo/mobile-logo.svg");
+    background-image: url('../../assets/logo/mobile-logo.svg');
 
-    @include large-desktop {
-      background-image: url("../../assets/logo/desktop-logo.svg");
+    @include tablet {
+      background-image: url('../../assets/logo/desktop-logo.svg');
       background-repeat: no-repeat;
       width: 7.375rem;
     }

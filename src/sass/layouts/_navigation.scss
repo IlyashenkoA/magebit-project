@@ -1,35 +1,36 @@
-@use "../abstracts/mixins" as *;
+@use '../abstracts/mixins' as *;
 
 .nav {
   padding-top: 0.625rem;
 
-  @include large-desktop {
+  @include tablet {
     padding-top: 1rem;
   }
 
   &__list {
-    display: inline-flex;
+    display: flex;
     gap: 1.25rem;
     margin: 0;
     padding: 0;
 
-    @include large-desktop {
-      gap: 2rem;
+    @include tablet {
+      gap: 1.5rem;
       font-size: 1rem;
     }
 
-    &-item {
-      list-style: none;
+    &-item > a {
+      @include text-styles(
+        var(--primary-ff),
+        0.875rem,
+        1.5rem,
+        400,
+        rgba(var(--grey-clr))
+      );
+      text-decoration: none;
 
-      & > a {
-        text-decoration: none;
-        color: rgba(var(--grey-clr));
-        font-size: 0.875rem;
-        font-family: var(--primary-ff);
-
-        @include large-desktop {
-          font-size: 1rem;
-        }
+      @include tablet {
+        font-size: 1rem;
+        line-height: 1.625rem;
       }
     }
   }

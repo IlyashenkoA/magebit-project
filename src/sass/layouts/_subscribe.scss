@@ -1,86 +1,114 @@
-@use "../abstracts/mixins" as *;
+@use '../abstracts/mixins' as *;
 
 .subscribe {
   display: flex;
   flex-direction: column;
   gap: 11rem;
-
   min-height: 100vh;
 
-  @include large-desktop {
+  @include tablet {
+    max-width: 30rem;
     gap: 10rem;
-    padding: 6.25rem 4rem;
+    padding: 5.7rem 6.25rem;
     min-height: initial;
-    background: linear-gradient(180deg, rgba(var(--white-clr)) 0%, rgba(var(--almost-white-clr)) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(var(--white-clr)) 0%,
+      rgba(var(--almost-white-clr)) 100%
+    );
   }
 
   &__container {
     display: flex;
     flex-direction: column;
     align-self: center;
-
-    min-width: 18.5rem;
-    max-width: 30rem;
-    width: calc(100% - 10rem);
+    width: clamp(18.5rem, calc(100% - 10rem), 30rem);
     padding: 1.875rem 1.25rem;
     margin-bottom: 10rem;
+    background: linear-gradient(
+      180deg,
+      rgba(var(--white-clr)) 0%,
+      rgba(var(--almost-white-clr)) 100%
+    );
 
-    background: linear-gradient(180deg, rgba(var(--white-clr)) 0%, rgba(var(--almost-white-clr)) 100%);
-
-    @include large-desktop {
+    @include tablet {
+      justify-content: center;
       position: initial;
       transform: initial;
-      padding: 0;
       background: initial;
-
-      display: grid;
-      place-content: center;
-      flex: 1 1 auto;
-
-      width: 100%;
+      padding: 0;
       margin: 0;
-      max-width: initial;
+      width: 100%;
+    }
+
+    &-success-icon {
+      padding-bottom: 2.35rem;
     }
 
     &-title {
-      font-family: var(--secondary-ff);
-      font-size: 1.5rem;
-      font-weight: 400;
-      line-height: 2.125rem;
+      @include text-styles(
+        var(--secondary-ff),
+        1.5rem,
+        2.125rem,
+        400,
+        rgba(var(--black-clr), 1)
+      );
       margin: 0;
       padding-bottom: 0.625rem;
-      color: rgba(var(--black-clr), 1);
 
-      @include large-desktop {
+      @include tablet {
         font-size: 2rem;
-        padding: 0 0 1rem 2.25rem;
+        line-height: 2.75rem;
+        padding-bottom: 0.935rem;
       }
     }
 
-    &-subtitle {
-      font-family: var(--primary-ff);
-      font-size: 0.875rem;
-      line-height: 1.75rem;
-      font-weight: 400;
+    &-description {
+      @include text-styles(
+        var(--primary-ff),
+        0.875rem,
+        1.625rem,
+        400,
+        rgba(var(--grey-clr))
+      );
       margin: 0;
       padding-bottom: 1.25rem;
-      color: rgba(var(--grey-clr));
-      width: 80%;
 
-      @include large-desktop {
+      @include tablet {
         font-size: 1rem;
-        padding: 0 0 3.125rem 2.25rem;
-        width: 70%;
+        line-height: 1.75rem;
+        padding-bottom: 3.125rem;
+      }
+    }
+
+    .subscribe__form {
+      .tos-container {
+        padding-top: 0.5rem;
+
+        @include tablet {
+          padding-top: 2.375rem;
+        }
+      }
+
+      .error-message {
+        @include text-styles(
+          var(--primary-ff),
+          0.75rem,
+          1.125rem,
+          700,
+          rgba(var(--error-clr))
+        );
+        margin: 0;
+        padding: 0.375rem 0;
       }
     }
 
     &-social-links {
       display: grid;
       place-items: center;
-
       padding-top: 1.25rem;
 
-      @include large-desktop {
+      @include tablet {
         padding-top: 3.125rem;
       }
 
@@ -89,21 +117,16 @@
         height: 0.0625rem;
         width: 100%;
         background: rgba(var(--light-grey-clr));
-
-        @include large-desktop {
-          width: 85%;
-        }
       }
 
       .social__links-list {
-        display: inline-flex;
+        display: flex;
         justify-content: space-between;
         gap: 0.625rem;
-        list-style: none;
         margin: 0;
         padding: 1.25rem 0 0 0;
 
-        @include large-desktop {
+        @include tablet {
           padding-top: 3.125rem;
           gap: 1.25rem;
         }

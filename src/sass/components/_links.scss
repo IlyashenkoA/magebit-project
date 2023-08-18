@@ -1,9 +1,12 @@
+@use '../abstracts/mixins' as *;
+
 .link {
-  color: rgba(var(--black-clr), 1);
   text-underline-offset: 0.2rem;
+  text-decoration: underline;
 
   &:hover {
     color: rgba(var(--blue-clr));
+    text-decoration: underline;
   }
 
   &:focus {
