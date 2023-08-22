@@ -1,91 +1,48 @@
-# Getting Started with Create React App
+<br/>
+<p align="center">
+  <a href="https://github.com/IlyashenkoA/magebit-project">
+    <img src="https://github.com/IlyashenkoA/magebit-project/assets/12977611/23b14479-3a48-4b67-89b4-4eda3aad7b3a" alt="Logo" />
+  </a>
 
-This project was bootstrapped with
-[Create React App](https://github.com/facebook/create-react-app).
+  <h3 align="center">Magebit Test Assignment</h3>
 
-## Available Scripts
+  <p align="center">
+    <a href="https://magebit-project.vercel.app/">View Demo</a>
+  </p>
+</p>
 
-In the project directory, you can run:
+## About The Project
 
-### `npm start`
+Magebit Test: A basic newsletter subscription page with real-time email validation and a mandatory agreement to the Terms of Service (TOS) before submission.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<img src="https://github.com/IlyashenkoA/magebit-project/assets/12977611/5c1dd2e1-1144-451e-853c-cff3cb98401c" />
+<img src="https://github.com/IlyashenkoA/magebit-project/assets/12977611/5fb08a36-ea4e-44c6-ac17-bf0087e29f4a" />
+<img src="https://github.com/IlyashenkoA/magebit-project/assets/12977611/76025333-820f-4741-a00e-eee621ecc179" />
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Built With
 
-### `npm test`
+* React
+* SASS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests)
-for more information.
+## Getting Started
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best
-performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p>1. Clone the repository</p>
 
-See the section about
-[deployment](https://facebook.github.io/create-react-app/docs/deployment) for
-more information.
+```
+git clone https://github.com/IlyashenkoA/magebit-project.git
+```
 
-### `npm run eject`
+<p>2. Install all packages</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can
-`eject` at any time. This command will remove the single build dependency from
-your project.
+<p>3. Run the project</p>
 
-Instead, it will copy all the configuration files and the transitive
-dependencies (webpack, Babel, ESLint, etc) right into your project so you have
-full control over them. All of the commands except `eject` will still work, but
-they will point to the copied scripts so you can tweak them. At this point
-you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for
-small and middle deployments, and you shouldn't feel obligated to use this
-feature. However we understand that this tool wouldn't be useful if you couldn't
-customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the
-[Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here:
-[https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+npm start
+```
